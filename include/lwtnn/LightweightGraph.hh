@@ -26,7 +26,7 @@
       M  <-- merge layer
       |
       D  <-- dense layer
-     / \
+     / \                                                                //
    D2   D3
     |   |
     |   O_c  <-- multiclass output (softmax activation)
