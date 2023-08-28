@@ -284,12 +284,14 @@ namespace generic {
     void throw_cfg(std::string msg, std::size_t index) {
         throw NNConfigurationException(msg + " " + std::to_string(index));
     }
+    [[maybe_unused]]
     void check_compute_node(const NodeConfig& node) {
         std::size_t n_source = node.sources.size();
         if (n_source != 1) throw_cfg("need one source, found", n_source);
         int layer_n = node.index;
         if (layer_n < 0) throw_cfg("negative layer number", layer_n);
     }
+    [[maybe_unused]]
     void check_compute_node(const NodeConfig& node, std::size_t n_layers) {
         check_compute_node(node);
         int layer_n = node.index;
